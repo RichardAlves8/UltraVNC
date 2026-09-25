@@ -1,19 +1,22 @@
-# UltraVNC — Segurança em redes privadas 
+## UltraVNC — Padrões de configurações e melhor uso
 
-O UltraVNC é um software de acesso remoto que armazena a senha de conexão criptografada no arquivo `ultravnc.ini`. Essa criptografia, no entanto,  utiliza o algoritmo DES <i>(Data Encryption Standard)</i> operando no modo ECB <i>(Electronic Codebook)</i>. Qualquer senha armazenada pode ser recuperada caso o arquivo na pasta do programa seja aberto.
+O UltraVNC é um software de acesso remoto, muito utilizado por ser open source e atender muito bem seus usuários. Achei interessante compartilhar como ele funciona em seu padrão de instalação, e como configurá-lo da melhor forma.
 
-## Por que isso é perigoso?
-O UltraVNC é OpenSource oque significa que qualquer pessoa pode ter acesso ao seu código fonte, e dito isso, é exposto o uso de uma chave estática em Hexdecimal, que é sempre a mesma em todas as instalações.
-<p align="center"><code>E8 4A D6 60 C4 72 1A E0</code></p>
+### O arquivo `ultravnc.ini`
 
- 
-No script deste respositório está um exemplo do nível da fragilidade do arquivo em que sua senha fica armazenada.
+Este armazena como suas configurações foram feitas, para que não seja preciso repeti-las toda vez, mas também sua chave de acesso. <br>
+Para isso, é usado um dos algoritmos de criptografia disponíveis para salvá-la, mas, por padrão de instalação, é utilizado o DES <i>(Data Encryption Standard)</i> no modo ECB <i>(Electronic Codebook)</i>.<br>
+Por via de regra, esse algoritmo atende bem à maioria dos casos, mas, quando falamos de open source, é oportuno salientar que em seu repositório há informações sobre como ele é utilizado.
+<br>
+### Sabemos que a chave:
+ - É predefinida. 
+ - Não utiliza um gerador aleatório.
+ - Não tem prazo de vencimento.
 
 
-## Recomendações 
+### E Então podemos:
 
-- Evitar o uso do método de autenticação padrão.
-- Utilizar um plugin de criptografia mais robusto.
-- Restringir o acesso à porta.
-- Proteger o arquivo `ultravnc.ini`.
-- Monitorar logs de acesso.
+- Alterar o método de autenticação.
+- Utilizar outros algoritmos de criptografia em suas configurações.
+
+Neste repositório há um script que mostra um exemplo de uso, invertendo o processo com a chave mencionada. 
