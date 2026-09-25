@@ -11,7 +11,7 @@ Por via de regra, esse algoritmo atende bem à maioria dos casos, mas, quando fa
 ### Sabemos que a chave:
  - É predefinida. 
  - Não utiliza um gerador aleatório.
- - Não tem prazo de vencimento.
+ - Não tem prazo de validade.
 
 
 ### E Então podemos:
