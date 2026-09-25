@@ -1,4 +1,4 @@
-# UltraVNC — Risco de segurança em redes privadas 
+# UltraVNC — Segurança em redes privadas 
 
 O UltraVNC é um software de acesso remoto que armazena a senha de conexão criptografada no arquivo `ultravnc.ini`. Essa criptografia, no entanto,  utiliza o algoritmo DES <i>(Data Encryption Standard)</i> operando no modo ECB <i>(Electronic Codebook)</i>. Qualquer senha armazenada pode ser recuperada caso o arquivo na pasta do programa seja aberto.
 
